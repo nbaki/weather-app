@@ -6,6 +6,8 @@ This is a small Ruby on Rails project that enables you to obtain the current wea
 * Rails version: 8.0
 * CSS: Bootstrap 5 CDN
 
+**[VIEW DEMO](https://weather-app-w5zp.onrender.com/)**
+
 ## Running the App
 
 1. Bundle gems: `bundle install`
