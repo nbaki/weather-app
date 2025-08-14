@@ -1,0 +1,22 @@
+<div class="card" data-controller="weather">
+  <div class="card-header text-center text-success"><h1>Weather Forecast</h1></div>
+  <div class="card-body">
+    <h3 class='text-center'>Enter in an address or zip code</h3>
+    <%= form_with url: forecasts_search_path, scope: :forecast do |f| %>
+      <div class="row">
+        <div class="col">
+          <%= f.label :address %>
+          <%= f.text_field :address, class: 'form-control', placeholder: '1600 Pennsylvania Ave NW, Washington, DC' %>
+        </div>
+        <div class="col">
+          <%= f.label :zip %>
+          <%= f.text_field :zip, class: 'form-control', placeholder: '20500' %>
+        </div>
+      </div>
+      <hr />
+      <div class="row"><div class="col text-center"><%= f.submit 'Search', class: 'btn btn-success' %></div></div>
+    <% end %>
+  </div>
+</div>
+
+<turbo-frame id="weather-results"/>

@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header"><h1 class="text-center text-primary">Today's Forecast</h1></div>
+  <div class="card-body">
+    <% if error %>
+      <p>There was a problem locating the forecast</p>
+      <p><%= error[:message] %></p>
+    <% else %>
+      <% if zip && !fresh_zip_forecast %>
+        <p>Retrieved previous forecast by ZIP from the last 30 minutes</p>
+      <% end %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Current Temp</th>
+            <th>Condition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="location"><%= "#{location[:name]}, #{location[:region]}" %></td>
+            <td class="temp"><%= weather[:temp_f] %> F</td>
+            <td class="condition"><%= weather[:condition][:text] %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
